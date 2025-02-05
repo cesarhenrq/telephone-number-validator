@@ -1,8 +1,13 @@
 const clearButton = document.getElementById("clear-btn");
+const userInput = document.getElementById("user-input");
+const result = document.getElementById("results-div");
 
-const toggleResultVisibility = () => {
-  const result = document.getElementById("results-div");
-  result.className = result.className === "hide" ? "" : "hide";
+const resetResult = () => {
+  result.textContent = "";
+  result.className = "hide";
 };
 
-clearButton.addEventListener("click", toggleResultVisibility);
+clearButton.addEventListener("click", () => {
+  userInput.value = "";
+  resetResult();
+});
